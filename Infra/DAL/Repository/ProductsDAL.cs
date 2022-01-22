@@ -101,5 +101,15 @@ namespace Infra.DAL.Repository
         public async Task<bool> Update(Product entity) => await _conn.UpdateAsync<Product>(entity);
         public string GetConnectionString() => Settings.ConnectionString;
 
+        public async Task<bool> ProductExists(int id)
+        {
+            var query = @"Select [Id] from [Product] where [Id] = @Id";
+            var param = new DynamicParameters();
+            param.Add("Id");
+
+            var exec = await _conn.ExecuteScalarAsync<int>(query, param: param);
+
+            return exec > 0;
+        }
     }
 }

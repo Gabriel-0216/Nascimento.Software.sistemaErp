@@ -59,6 +59,7 @@ builder.Services.AddScoped<IJWTService, JwtService>();
 builder.Services.AddScoped<IBuyerDAL, BuyerDAL>();
 builder.Services.AddScoped<ICategoryDAL, CategoryDAL>();
 builder.Services.AddScoped<IProductsDAL, ProductsDAL>();
+builder.Services.AddScoped<IOrderDAL, OrderDAL>();
 
 
 builder.Services.AddAuthentication(options =>

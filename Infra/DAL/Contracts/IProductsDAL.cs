@@ -8,6 +8,7 @@ namespace Infra.DAL.Contracts
         Task<IEnumerable<Product>> GetTop50Products();
         Task<IEnumerable<Product>> GetProductsByCategoryId(int id);
         Task<Product?> GetProductById(int id);
+        Task<bool> ProductExists(int id);
 
     }
 }
